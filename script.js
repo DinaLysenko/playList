@@ -52,3 +52,34 @@ const playList = {
 }
 
 // render
+document.body.style.boxSizing='border-box'
+document.body.style.margin='0px'
+
+let header = document.createElement('header')
+document.body.append(header)
+header.style.width = '100%'
+header.style.backgroundColor = '#1A1A1A'
+header.style.height = '50px'
+
+let logo = document.createElement('img')
+logo.src = 'images/logo/header-logo.svg'
+logo.style.height = '24px'
+logo.style.width = '109px'
+logo.style.margin = '12px 0 12px 65px'
+header.append(logo)
+
+let main=document.createElement('main')
+document.body.append(main)
+main.style.backgroundColor='#121212'
+main.style.width='100%'
+main.style.height='100vh'
+
+
+
+let mainHeader=document.createElement('h2')
+mainHeader.innerText="My PlayLists"
+mainHeader.style.fontSize='36px'
+mainHeader.style.margin='0px'
+mainHeader.style.color='white'
+main.append(mainHeader)
+
