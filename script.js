@@ -152,50 +152,6 @@ function renderTrack(inputTrackForRender){
     track.controls=true
     section.append(track)
     listItem0.append(artistImage, artistName, track)
-
-    // let artist1Image=document.createElement('img')
-    // artist1Image.src=inputTrackForRender.tracksRussianRock[1].artistImage
-    // section.append(artist1Image)
-    //
-    // let artist1Name=document.createElement('span')
-    // artist1Name.innerText=inputTrackForRender.tracksRussianRock[1].trackName
-    // section.append(artist1Name)
-    //
-    // let track1=document.createElement('audio')
-    // track1.src=inputTrackForRender.tracksRussianRock[1].trackUrl
-    // track1.controls=true
-    // section.append(track1)
-    // listItem1.append(artist1Image, artist1Name, track1)
-    //
-    // let artist2Image=document.createElement('img')
-    // artist2Image.src=inputTrackForRender.tracksRussianRock[2].artistImage
-    // section.append(artist2Image)
-    //
-    // let artist2Name=document.createElement('span')
-    // artist2Name.innerText=inputTrackForRender.tracksRussianRock[2].trackName
-    // section.append(artist2Name)
-    //
-    // let track2=document.createElement('audio')
-    // track2.src=inputTrackForRender.tracksRussianRock[2].trackUrl
-    // track2.controls=true
-    // section.append(track2)
-    //
-    // listItem2.append(artist2Image, artist2Name, track2)
-    //
-    // let artist3Image=document.createElement('img')
-    // artist3Image.src=inputTrackForRender.tracksRussianRock[3].artistImage
-    // section.append(artist3Image)
-    //
-    // let artist3Name=document.createElement('span')
-    // artist3Name.innerText=inputTrackForRender.tracksRussianRock[3].trackName
-    // section.append(artist3Name)
-    //
-    // let track3=document.createElement('audio')
-    // track3.src=inputTrackForRender.tracksRussianRock[3].trackUrl
-    // track3.controls=true
-    // section.append(track3)
-    // listItem3.append(artist3Image, artist3Name, track3)
-
 }
 renderPlaylist(playList)
 
