@@ -2,58 +2,75 @@
 const playList = {
     title: 'Playlist',
     imageCoverUrl: ['images/coverImage/russian-rock/russian-rock.jpg', 'images/coverImage/rock/rock.jpg'],
-    playListCategory: ['Rock', 'Russian Rock'],
+    playListCategory: ['Russian Rock', 'Rock'],
     tracksCount: 4,
     tracksDuration: "11m 41s",
     tracksRussianRock: [
         {
             id: 0,
-            trackName: 'tracks/russian-rock/Korol_i_SHut_-_Kukla_kolduna.mp3',
+            trackName: 'Korol i SHut - Kukla kolduna',
+            trackUrl: 'tracks/russian-rock/Korol_i_SHut_-_Kukla_kolduna.mp3',
             isHot: true,
+            artistImage: 'images/artistImage/russian-rock/korol-and-shut.jpg'
         },
         {
             id: 1,
-            trackName: 'tracks/russian-rock/Korol_i_SHut_-_Lesnik.mp3',
+            trackName: 'Korol i SHut - Lesnik',
+            trackUrl: 'tracks/russian-rock/Korol_i_SHut_-_Lesnik.mp3',
             isHot: true,
+            artistImage: 'images/artistImage/russian-rock/korol-and-shut.jpg'
         },
         {
             id: 2,
-            trackName: 'tracks/russian-rock/Korol_i_SHut_-_Prygnu_so_skaly.mp3',
+            trackName: 'Korol i SHut - Prygnu so skaly',
+            trackUrl: 'tracks/russian-rock/Korol_i_SHut_-_Prygnu_so_skaly.mp3',
             isHot: true,
+            artistImage: 'images/artistImage/russian-rock/korol-and-shut.jpg'
         },
         {
             id: 3,
-            trackName: 'tracks/russian-rock/Viktor_Coj_-_Zvezda_Po_Imeni_Solnce.mp3',
+            trackName: 'Viktor Coj - Zvezda Po Imeni Solnce',
+            trackUrl: 'tracks/russian-rock/Viktor_Coj_-_Zvezda_Po_Imeni_Solnce.mp3',
             isHot: true,
+            artistImage: 'images/artistImage/russian-rock/kino.jpg'
         }
     ],
     tracksRock: [
         {
             id: 0,
-            trackName: 'tracks/rock/Bob_Dylan_-_Knockin_On_Heaven_s_Door.mp3',
+            trackName: 'Bob_Dylan_-_Knockin_On_Heaven_s_Door',
+            trackUrl: 'tracks/rock/Bob_Dylan_-_Knockin_On_Heaven_s_Door.mp3',
             isHot: true,
+            artistImage: 'images/artistImage/rock/bob-dilan.jpg'
         },
         {
             id: 1,
-            trackName: 'tracks/rock/Queen_-_Bohemian_Rhapsody.mp3',
+            trackName: 'Queen_-_Bohemian_Rhapsody',
+            trackUrl: 'tracks/rock/Queen_-_Bohemian_Rhapsody.mp3',
             isHot: true,
+            artistImage: 'images/artistImage/rock/queen.jpg'
         },
         {
             id: 2,
-            trackName: 'tracks/rock/Queen_-_The_Show_Must_Go_On.mp3',
+            trackName: 'Queen_-_The_Show_Must_Go_On',
+            trackUrl: 'tracks/rock/Queen_-_The_Show_Must_Go_On.mp3',
             isHot: true,
+            artistImage: 'images/artistImage/rock/queen.jpg'
         },
         {
             id: 3,
-            trackName: 'tracks/rock/Queen_-_Who_Wants_To_Live_Forever.mp3',
+            trackUrl: 'tracks/rock/Queen_-_Who_Wants_To_Live_Forever.mp3',
+            trackName: 'Queen_-_Who_Wants_To_Live_Forever',
             isHot: true,
+            artistImage: 'images/artistImage/rock/queen.jpg'
         }
     ],
 }
 
 // render
-document.body.style.boxSizing='border-box'
-document.body.style.margin='0px'
+document.body.style.boxSizing = 'border-box'
+document.body.style.margin = '0px'
+document.body.style.color = 'white'
 
 let header = document.createElement('header')
 document.body.append(header)
@@ -68,18 +85,119 @@ logo.style.width = '109px'
 logo.style.margin = '12px 0 12px 65px'
 header.append(logo)
 
-let main=document.createElement('main')
+let main = document.createElement('main')
 document.body.append(main)
-main.style.backgroundColor='#121212'
-main.style.width='100%'
-main.style.height='100vh'
+main.style.backgroundColor = '#121212'
+main.style.width = '100%'
+main.style.height = '100vh'
 
 
-
-let mainHeader=document.createElement('h2')
-mainHeader.innerText="My PlayLists"
-mainHeader.style.fontSize='36px'
-mainHeader.style.margin='0px'
-mainHeader.style.color='white'
+let mainHeader = document.createElement('h2')
+mainHeader.innerText = "My PlayLists"
+mainHeader.style.fontSize = '36px'
+mainHeader.style.margin = '0px'
 main.append(mainHeader)
+
+let section = document.createElement('section')
+main.append(section)
+
+
+
+
+function renderPlaylist(playListForRendering){
+    renderPlaylistHeader(playListForRendering)
+    renderTrack(playListForRendering.tracksRussianRock[0])
+    renderTrack(playListForRendering.tracksRussianRock[1])
+    renderTrack(playListForRendering.tracksRussianRock[2])
+    renderTrack(playListForRendering.tracksRussianRock[3])
+}
+function renderPlaylistHeader(inputPlaylistForRendering){
+    let coverImage = document.createElement('img')
+    coverImage.src = inputPlaylistForRendering.imageCoverUrl[0]
+    section.append(coverImage)
+
+    let sectionTitle = document.createElement('p')
+    sectionTitle.innerText = inputPlaylistForRendering.title
+    section.append(sectionTitle)
+
+    let sectionCategoryTitle = document.createElement('h2')
+    sectionCategoryTitle.innerText = inputPlaylistForRendering.playListCategory[0]
+    section.append(sectionCategoryTitle)
+
+    let trackCountAndTime = document.createElement('span')
+    trackCountAndTime.innerText = inputPlaylistForRendering.tracksCount + ' ' + 'tracks, ' + inputPlaylistForRendering.tracksDuration
+    section.append(trackCountAndTime)
+}
+function renderTrack(inputTrackForRender){
+    let trackList=document.createElement('ul')
+    section.append(trackList)
+
+    let listItem0=document.createElement('li')
+    let listItem1=document.createElement('li')
+    let listItem2=document.createElement('li')
+    let listItem3=document.createElement('li')
+    trackList.append(listItem0, listItem1, listItem2, listItem3)
+
+    trackList.style.listStyleType='none'
+    let artistImage=document.createElement('img')
+    artistImage.src=inputTrackForRender.artistImage
+    section.append(artistImage)
+
+    let artistName=document.createElement('span')
+    artistName.innerText=inputTrackForRender.trackName
+    section.append(artistName)
+
+    let track=document.createElement('audio')
+    track.src=inputTrackForRender.trackUrl
+    track.controls=true
+    section.append(track)
+    listItem0.append(artistImage, artistName, track)
+
+    // let artist1Image=document.createElement('img')
+    // artist1Image.src=inputTrackForRender.tracksRussianRock[1].artistImage
+    // section.append(artist1Image)
+    //
+    // let artist1Name=document.createElement('span')
+    // artist1Name.innerText=inputTrackForRender.tracksRussianRock[1].trackName
+    // section.append(artist1Name)
+    //
+    // let track1=document.createElement('audio')
+    // track1.src=inputTrackForRender.tracksRussianRock[1].trackUrl
+    // track1.controls=true
+    // section.append(track1)
+    // listItem1.append(artist1Image, artist1Name, track1)
+    //
+    // let artist2Image=document.createElement('img')
+    // artist2Image.src=inputTrackForRender.tracksRussianRock[2].artistImage
+    // section.append(artist2Image)
+    //
+    // let artist2Name=document.createElement('span')
+    // artist2Name.innerText=inputTrackForRender.tracksRussianRock[2].trackName
+    // section.append(artist2Name)
+    //
+    // let track2=document.createElement('audio')
+    // track2.src=inputTrackForRender.tracksRussianRock[2].trackUrl
+    // track2.controls=true
+    // section.append(track2)
+    //
+    // listItem2.append(artist2Image, artist2Name, track2)
+    //
+    // let artist3Image=document.createElement('img')
+    // artist3Image.src=inputTrackForRender.tracksRussianRock[3].artistImage
+    // section.append(artist3Image)
+    //
+    // let artist3Name=document.createElement('span')
+    // artist3Name.innerText=inputTrackForRender.tracksRussianRock[3].trackName
+    // section.append(artist3Name)
+    //
+    // let track3=document.createElement('audio')
+    // track3.src=inputTrackForRender.tracksRussianRock[3].trackUrl
+    // track3.controls=true
+    // section.append(track3)
+    // listItem3.append(artist3Image, artist3Name, track3)
+
+}
+renderPlaylist(playList)
+
+
 
