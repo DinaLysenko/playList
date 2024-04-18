@@ -1,6 +1,4 @@
-import {section} from "../../playlists/mainAndSection.js";
-
-export function renderTracks(inputTrackForRender) {
+export function renderTracks(inputTrackForRender, section) {
 
     let listItem = document.createElement('div')
 
