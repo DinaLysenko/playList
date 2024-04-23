@@ -1,4 +1,6 @@
-export function renderTracks(inputTrackForRender, section) {
+
+
+export function renderTracks(inputTrackForRender, element) {
 
     let listItem = document.createElement('div')
 
@@ -17,5 +19,5 @@ export function renderTracks(inputTrackForRender, section) {
     track.style.height = '24px'
 
     listItem.append(artistImage, artistName, track)
-    section.append(listItem)
+    element.append(listItem)
 }

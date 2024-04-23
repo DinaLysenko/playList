@@ -1,6 +1,9 @@
-// data
-export const playlists = [{
-    playList: {
+import {renderTracks} from "../components/player/playlist/tracks/renderTracks.js";
+
+
+export const playlists = [
+    {
+        id: 0,
         title: 'Playlist',
         imageCoverUrl: 'images/coverImage/russian-rock/russian-rock.jpg',
         playListCategory: 'Russian Rock',
@@ -36,45 +39,65 @@ export const playlists = [{
                 artistImage: 'images/artistImage/russian-rock/kino.jpg'
             }
         ]
-    }
-},
+
+    },
     {
-        playList: {
-            title: 'Playlist',
-            imageCoverUrl: 'images/coverImage/rock/rock.jpg',
-            playListCategory: 'Rock',
-            tracksCount: 4,
-            tracksDuration: "11m 41s",
-            tracks: [
-                {
-                    id: 0,
-                    trackName: 'Bob_Dylan_-_Knockin_On_Heaven_s_Door',
-                    trackUrl: 'tracks/rock/Bob_Dylan_-_Knockin_On_Heaven_s_Door.mp3',
-                    isHot: true,
-                    artistImage: 'images/artistImage/rock/bob-dilan.jpg'
-                },
-                {
-                    id: 1,
-                    trackName: 'Queen_-_Bohemian_Rhapsody',
-                    trackUrl: 'tracks/rock/Queen_-_Bohemian_Rhapsody.mp3',
-                    isHot: true,
-                    artistImage: 'images/artistImage/rock/queen.jpg'
-                },
-                {
-                    id: 2,
-                    trackName: 'Queen_-_The_Show_Must_Go_On',
-                    trackUrl: 'tracks/rock/Queen_-_The_Show_Must_Go_On.mp3',
-                    isHot: true,
-                    artistImage: 'images/artistImage/rock/queen.jpg'
-                },
-                {
-                    id: 3,
-                    trackUrl: 'tracks/rock/Queen_-_Who_Wants_To_Live_Forever.mp3',
-                    trackName: 'Queen_-_Who_Wants_To_Live_Forever',
-                    isHot: true,
-                    artistImage: 'images/artistImage/rock/queen.jpg'
-                }
-            ],
-        }
+        id: 1,
+        title: 'Playlist',
+        imageCoverUrl: 'images/coverImage/rock/rock.jpg',
+        playListCategory: 'Rock',
+        tracksCount: 4,
+        tracksDuration: "11m 41s",
+        tracks: [
+            {
+                id: 0,
+                trackName: 'Bob_Dylan_-_Knockin_On_Heaven_s_Door',
+                trackUrl: 'tracks/rock/Bob_Dylan_-_Knockin_On_Heaven_s_Door.mp3',
+                isHot: true,
+                artistImage: 'images/artistImage/rock/bob-dilan.jpg'
+            },
+            {
+                id: 1,
+                trackName: 'Queen_-_Bohemian_Rhapsody',
+                trackUrl: 'tracks/rock/Queen_-_Bohemian_Rhapsody.mp3',
+                isHot: true,
+                artistImage: 'images/artistImage/rock/queen.jpg'
+            },
+            {
+                id: 2,
+                trackName: 'Queen_-_The_Show_Must_Go_On',
+                trackUrl: 'tracks/rock/Queen_-_The_Show_Must_Go_On.mp3',
+                isHot: true,
+                artistImage: 'images/artistImage/rock/queen.jpg'
+            },
+            {
+                id: 3,
+                trackUrl: 'tracks/rock/Queen_-_Who_Wants_To_Live_Forever.mp3',
+                trackName: 'Queen_-_Who_Wants_To_Live_Forever',
+                isHot: true,
+                artistImage: 'images/artistImage/rock/queen.jpg'
+            }
+        ],
     }
+
 ]
+
+
+function onChangeCallback() {}
+
+let tracksIndex = [{id: 0, currentTrackIndex: 0}, {id: 1, currentTrackIndex: 0}]
+
+export function addTrack(playlistId) {
+    let tagElement = document.getElementById(playlists[playlistId].playListCategory)
+    let trackIndex = tracksIndex.find(el => el.id === playlistId)
+    if (trackIndex.currentTrackIndex < playlists[playlistId].tracks.length) {
+        renderTracks(playlists[playlistId].tracks[trackIndex.currentTrackIndex], tagElement);
+        trackIndex.currentTrackIndex++;
+    }
+}
+
+export function setTrack(callBack) {
+    onChangeCallback = callBack
+}
+
+

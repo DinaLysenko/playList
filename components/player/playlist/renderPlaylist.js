@@ -1,12 +1,9 @@
 import {renderPlaylistHeader} from "./renderPlaylistHeader.js";
-import {renderTracks} from "./tracks/renderTracks.js";
 
 
 
-export function renderPlaylist(playListForRendering, section) {
+export function renderPlaylist(playListForRendering, element) {
 
-    renderPlaylistHeader(playListForRendering, section)
-    for (let i = 0; i < playListForRendering.playList.tracks.length; i++) {
-        renderTracks(playListForRendering.playList.tracks[i], section)
-    }
+    renderPlaylistHeader(playListForRendering, element)
+
 }
