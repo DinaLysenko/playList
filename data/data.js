@@ -9,6 +9,21 @@ export const playlists = [
         playListCategory: 'Russian Rock',
         tracksCount: 4,
         tracksDuration: "11m 41s",
+        tracks: []
+    },
+    {
+        id: 1,
+        title: 'Playlist',
+        imageCoverUrl: 'images/coverImage/rock/rock.jpg',
+        playListCategory: 'Rock',
+        tracksCount: 4,
+        tracksDuration: "11m 41s",
+        tracks: [],
+    }
+]
+let playlistTracks = [
+    {
+        id: 0,
         tracks: [
             {
                 id: 0,
@@ -38,16 +53,11 @@ export const playlists = [
                 isHot: true,
                 artistImage: 'images/artistImage/russian-rock/kino.jpg'
             }
-        ]
 
+        ]
     },
     {
         id: 1,
-        title: 'Playlist',
-        imageCoverUrl: 'images/coverImage/rock/rock.jpg',
-        playListCategory: 'Rock',
-        tracksCount: 4,
-        tracksDuration: "11m 41s",
         tracks: [
             {
                 id: 0,
@@ -77,24 +87,26 @@ export const playlists = [
                 isHot: true,
                 artistImage: 'images/artistImage/rock/queen.jpg'
             }
-        ],
+        ]
     }
-
 ]
 
-
-function onChangeCallback() {}
+function onChangeCallback() {
+}
 
 let tracksIndex = [{id: 0, currentTrackIndex: 0}, {id: 1, currentTrackIndex: 0}]
 
 export function addTrack(playlistId) {
     let tagElement = document.getElementById(playlists[playlistId].playListCategory)
     let trackIndex = tracksIndex.find(el => el.id === playlistId)
-    if (trackIndex.currentTrackIndex < playlists[playlistId].tracks.length) {
+    if (trackIndex.currentTrackIndex <= playlists[playlistId].tracks.length) {
+        let currentTrack = playlistTracks.find(el => el.id === playlistId).tracks[trackIndex.currentTrackIndex]
+        playlists[playlistId].tracks.push(currentTrack)
         renderTracks(playlists[playlistId].tracks[trackIndex.currentTrackIndex], tagElement);
         trackIndex.currentTrackIndex++;
     }
 }
+
 
 export function setTrack(callBack) {
     onChangeCallback = callBack
