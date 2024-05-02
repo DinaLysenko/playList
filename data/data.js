@@ -1,6 +1,7 @@
 import {renderTracks} from "../components/player/playlist/tracks/renderTracks.js";
 
 
+
 export const playlists = [
     {
         id: 0,
@@ -21,7 +22,7 @@ export const playlists = [
         tracks: [],
     }
 ]
-let playlistTracks = [
+export let playlistTracks = [
     {
         id: 0,
         tracks: [
@@ -94,7 +95,8 @@ let playlistTracks = [
 function onChangeCallback() {
 }
 
-let tracksIndex = [{id: 0, currentTrackIndex: 0}, {id: 1, currentTrackIndex: 0}]
+export let tracksIndex = [{id: 0, currentTrackIndex: 0}, {id: 1, currentTrackIndex: 0}]
+export let disabledElement = true
 
 export function addTrack(playlistId) {
     let tagElement = document.getElementById(playlists[playlistId].playListCategory)
@@ -102,9 +104,15 @@ export function addTrack(playlistId) {
     if (trackIndex.currentTrackIndex <= playlists[playlistId].tracks.length) {
         let currentTrack = playlistTracks.find(el => el.id === playlistId).tracks[trackIndex.currentTrackIndex]
         playlists[playlistId].tracks.push(currentTrack)
+
         renderTracks(playlists[playlistId].tracks[trackIndex.currentTrackIndex], tagElement);
         trackIndex.currentTrackIndex++;
+        if (playlists[playlistId].tracks.length === playlistTracks[playlistId].tracks.length) {
+            let buttonElement = document.getElementById(playlistId.toString());
+            buttonElement.disabled = true;
+        }
     }
+
 }
 
 

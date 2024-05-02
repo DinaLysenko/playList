@@ -3,7 +3,7 @@ import {container, mainElement, mainHeader} from "./mainElement.js";
 import {sectionElement} from "./sectionElement.js";
 import {commonStyle} from "../../../styles/commonStyles.js";
 import {renderAppHeader} from "../../renderAppHeader.js";
-import {button} from "../playlist/tracks/button/button.js";
+import {button,} from "../playlist/tracks/button/button.js";
 import {addTrack} from "../../../data/data.js";
 
 
@@ -24,7 +24,9 @@ export function renderPlaylists(playlistsForRender) {
         playlistBlock.id = playlistsForRender[i].playListCategory;
 
         renderPlaylist(playlistsForRender[i], playlistBlock);
+
         playlistBlock.append(button(() => addTrack(playlistsForRender[i].id),playlistsForRender[i].id));
+
     }
 
 }
