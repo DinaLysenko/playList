@@ -92,11 +92,9 @@ export let playlistTracks = [
     }
 ]
 
-function onChangeCallback() {
-}
+function onChangeCallback() {}
 
 export let tracksIndex = [{id: 0, currentTrackIndex: 0}, {id: 1, currentTrackIndex: 0}]
-export let disabledElement = true
 
 export function addTrack(playlistId) {
     let tagElement = document.getElementById(playlists[playlistId].playListCategory)
