@@ -1,98 +1,98 @@
 import {renderTracks} from "../components/player/playlist/tracks/renderTracks.js";
 
 
+export const data = {
+    playlists: [
+        {
+            playListInfo: {
+                id: '0',
+                title: 'Russian Rock',
+                coverImageUrl: 'img/cardImage/image1.jpg',
+                tracksCount: 4
+            },
+            tracks: [
+                {
+                    id: '0-1',
+                    artistName: 'Korol i SHut',
+                    trackTitle: 'Kukla kolduna',
+                    trackFileUrl: 'audio/Korol i SHut - Kukla kolduna.mp3',
+                    isHot: true,
+                    trackCoverImgUrl: 'img/cardImage/trackList/korol-and-shut.jpg'
+                },
+                {
+                    id: '0-1',
+                    artistName: 'Korol i SHut',
+                    trackTitle: 'Lesnik',
+                    trackFileUrl: 'audio/Korol i SHut - Lesnik.mp3',
+                    isHot: true,
+                    trackCoverImgUrl: 'img/cardImage/trackList/korol-and-shut.jpg'
+                },
+                {
+                    id: '0-2',
+                    artistName: 'Korol i SHut',
+                    trackTitle: 'Prygnu so skaly',
+                    trackFileUrl: 'audio/Korol i SHut - Prygnu so skaly.mp3',
+                    isHot: true,
+                    trackCoverImgUrl: 'img/cardImage/trackList/korol-and-shut.jpg'
+                },
+                {
+                    id: '0-3',
+                    artistName: 'Viktor Coj',
+                    trackTitle: 'Zvezda Po Imeni Solnce',
+                    trackFileUrl: 'audio/Viktor Coj - Zvezda Po Imeni Solnce.mp3',
+                    isHot: true,
+                    trackCoverImgUrl: 'img/cardImage/trackList/kino.jpg'
+                }
+            ]
+        },
+        {
+            playListInfo: {
+                id: '1',
+                title: 'Rock',
+                coverImageUrl: 'img/cardImage/image2.jpg',
+                tracksCount: 4,
+            },
+            tracks: [
+                {
+                    id: '1-0',
+                    artistName: 'Bob Dylan',
+                    trackTitle: 'Knockin On Heavens Door',
+                    trackFileUrl: 'audio/Bob Dylan - Knockin On Heaven s Door.mp3',
+                    isHot: true,
+                    trackCoverImgUrl: 'img/cardImage/trackList/bob-dilan.jpg'
+                },
+                {
+                    id: '1-1',
+                    artistName: 'Queen',
+                    trackTitle: 'Bohemian Rhapsody',
+                    trackFileUrl: 'audio/Queen - Bohemian Rhapsody.mp3',
+                    isHot: true,
+                    trackCoverImgUrl: 'img/cardImage/trackList/queen.jpg'
+                },
+                {
+                    id: '1-2',
+                    artistName: 'Queen',
+                    trackTitle: 'The Show Must Go On',
+                    trackFileUrl: 'audio/Queen - The Show Must Go On.mp3',
+                    isHot: true,
+                    trackCoverImgUrl: 'img/cardImage/trackList/queen.jpg'
+                },
+                {
+                    id: '1-3',
+                    artistName: 'Queen',
+                    trackTitle: 'Who Wants To Live Forever',
+                    trackFileUrl: 'audio/Queen - Who Wants To Live Forever.mp3',
+                    isHot: true,
+                    trackCoverImgUrl: 'img/cardImage/trackList/queen.jpg'
+                },
+            ]
+        }
+    ]
+}
 
-export const playlists = [
-    {
-        id: 0,
-        title: 'Playlist',
-        imageCoverUrl: 'images/coverImage/russian-rock/russian-rock.jpg',
-        playListCategory: 'Russian Rock',
-        tracksCount: 4,
-        tracksDuration: "11m 41s",
-        tracks: []
-    },
-    {
-        id: 1,
-        title: 'Playlist',
-        imageCoverUrl: 'images/coverImage/rock/rock.jpg',
-        playListCategory: 'Rock',
-        tracksCount: 4,
-        tracksDuration: "11m 41s",
-        tracks: [],
-    }
-]
-export let playlistTracks = [
-    {
-        id: 0,
-        tracks: [
-            {
-                id: 0,
-                trackName: 'Korol i SHut - Kukla kolduna',
-                trackUrl: 'tracks/russian-rock/Korol_i_SHut_-_Kukla_kolduna.mp3',
-                isHot: true,
-                artistImage: 'images/artistImage/russian-rock/korol-and-shut.jpg'
-            },
-            {
-                id: 1,
-                trackName: 'Korol i SHut - Lesnik',
-                trackUrl: 'tracks/russian-rock/Korol_i_SHut_-_Lesnik.mp3',
-                isHot: true,
-                artistImage: 'images/artistImage/russian-rock/korol-and-shut.jpg'
-            },
-            {
-                id: 2,
-                trackName: 'Korol i SHut - Prygnu so skaly',
-                trackUrl: 'tracks/russian-rock/Korol_i_SHut_-_Prygnu_so_skaly.mp3',
-                isHot: true,
-                artistImage: 'images/artistImage/russian-rock/korol-and-shut.jpg'
-            },
-            {
-                id: 3,
-                trackName: 'Viktor Coj - Zvezda Po Imeni Solnce',
-                trackUrl: 'tracks/russian-rock/Viktor_Coj_-_Zvezda_Po_Imeni_Solnce.mp3',
-                isHot: true,
-                artistImage: 'images/artistImage/russian-rock/kino.jpg'
-            }
 
-        ]
-    },
-    {
-        id: 1,
-        tracks: [
-            {
-                id: 0,
-                trackName: 'Bob_Dylan_-_Knockin_On_Heaven_s_Door',
-                trackUrl: 'tracks/rock/Bob_Dylan_-_Knockin_On_Heaven_s_Door.mp3',
-                isHot: true,
-                artistImage: 'images/artistImage/rock/bob-dilan.jpg'
-            },
-            {
-                id: 1,
-                trackName: 'Queen_-_Bohemian_Rhapsody',
-                trackUrl: 'tracks/rock/Queen_-_Bohemian_Rhapsody.mp3',
-                isHot: true,
-                artistImage: 'images/artistImage/rock/queen.jpg'
-            },
-            {
-                id: 2,
-                trackName: 'Queen_-_The_Show_Must_Go_On',
-                trackUrl: 'tracks/rock/Queen_-_The_Show_Must_Go_On.mp3',
-                isHot: true,
-                artistImage: 'images/artistImage/rock/queen.jpg'
-            },
-            {
-                id: 3,
-                trackUrl: 'tracks/rock/Queen_-_Who_Wants_To_Live_Forever.mp3',
-                trackName: 'Queen_-_Who_Wants_To_Live_Forever',
-                isHot: true,
-                artistImage: 'images/artistImage/rock/queen.jpg'
-            }
-        ]
-    }
-]
-
-function onChangeCallback() {}
+function onChangeCallback() {
+}
 
 export let tracksIndex = [{id: 0, currentTrackIndex: 0}, {id: 1, currentTrackIndex: 0}]
 
@@ -116,6 +116,19 @@ export function addTrack(playlistId) {
 
 export function setTrack(callBack) {
     onChangeCallback = callBack
+}
+
+//=====================================================
+function createElement(element, obj) {
+    let container = document.createElement(element)
+    if (typeof obj === 'string') {
+        container.classList.add(obj)
+    } else if (typeof obj === 'object') {
+        for (const objKey in obj) {
+            container[objKey] = obj[objKey]
+        }
+    }
+    return container
 }
 
 

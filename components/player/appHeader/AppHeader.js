@@ -1,11 +1,13 @@
 import {HeaderLogo} from "./HeaderLogo.js";
+import {Container} from "../Container.js";
 
 export function AppHeader() {
-    let container = document.createElement('header')
-    document.body.append(container)
-
+    let header = document.createElement('header')
+    document.body.append(header)
+    let container = Container()
+    header.append(container)
     let logo = HeaderLogo()
     container.append(logo)
-    return container
+    return header
 }
 
