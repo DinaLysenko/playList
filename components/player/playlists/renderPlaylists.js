@@ -2,10 +2,10 @@ import {renderPlaylist} from '../playlist/renderPlaylist.js';
 import {SectionElement} from "./SectionElement.js";
 import {button,} from "../playlist/tracks/button/button.js";
 import {addTrack} from "../../../data/data.js";
-import {MainElement} from "./main/MainElement.js";
+import {Main} from "../main/Main.js";
 import {Container} from "../Container.js";
-import {MainHeader} from "./main/MainHeader.js";
-import {AppHeader} from "../appHeader/AppHeader.js";
+
+
 
 
 export function renderPlaylists(playlistsForRender) {
@@ -13,7 +13,7 @@ export function renderPlaylists(playlistsForRender) {
 
     AppHeader()
 
-    let main = MainElement()
+    let main = Main()
     let mainContainer = Container()
     let mainHeader = MainHeader()
     let sectionElement=SectionElement()

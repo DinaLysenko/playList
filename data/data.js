@@ -119,12 +119,15 @@ export function setTrack(callBack) {
 }
 
 //=====================================================
-function createElement(element, obj) {
+export function createElement(element, obj) {
     let container = document.createElement(element)
     if (typeof obj === 'string') {
         container.classList.add(obj)
     } else if (typeof obj === 'object') {
         for (const objKey in obj) {
+            if(objKey==='class'){
+                container.classList.add(obj[objKey])
+            }
             container[objKey] = obj[objKey]
         }
     }

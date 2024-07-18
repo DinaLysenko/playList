@@ -1,13 +1,17 @@
 import {renderPlaylists} from "./components/player/playlists/renderPlaylists.js";
-import {playlists, setTrack} from "./data/data.js";
+import {data, setTrack} from "./data/data.js";
+import {App} from "./components/App.js";
 
 
 
 // render
+let root=document.getElementById('root')
+const app=App()
+root.append(app)
 
 
-renderPlaylists(playlists)
-setTrack(renderPlaylists)
+// renderPlaylists(data)
+// setTrack(renderPlaylists)
 
 
 
