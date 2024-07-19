@@ -1,0 +1,13 @@
+import {createElement, data} from "../../../data/data.js";
+import {AddTrackPanel} from "./AddTrackPanel.js";
+import {List} from "./tracks/List.js";
+
+export function Tracklist(playlist) {
+    const tracklist = createElement('div', 'tracklist')
+
+    const addTrackPanel = AddTrackPanel()
+
+    const list = List(playlist.tracks)
+    tracklist.append(addTrackPanel, list)
+    return tracklist
+}
