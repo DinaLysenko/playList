@@ -15,7 +15,7 @@ export function List(tracks) {
         const trackInfo = createElement('div', 'track-info')
         const trackName = createElement('div', {
             class: 'track-name',
-            innerText: tracks[i].artistName + ' ' + tracks[i].trackTitle
+            innerText: tracks[i].artistName + ' - ' + tracks[i].trackTitle
         })
 
         const buttonsContainer = createElement('div', 'buttons-container')
