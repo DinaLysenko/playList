@@ -1,4 +1,4 @@
-import {createElement} from "../../../data/data.js";
+import {createElement} from "../../../js/data/data.js";
 import {Article} from "./Article.js";
 
 export function Playlists(playlist){

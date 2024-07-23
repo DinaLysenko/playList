@@ -1,4 +1,4 @@
-import {createElement, data} from "../../../data/data.js";
+import {createElement, data} from "../../../js/data/data.js";
 import {AddTrackPanel} from "./AddTrackPanel.js";
 import {List} from "./tracks/List.js";
 

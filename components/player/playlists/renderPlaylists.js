@@ -1,7 +1,7 @@
 import {renderPlaylist} from '../playlist/renderPlaylist.js';
 import {SectionElement} from "./SectionElement.js";
 import {button,} from "../playlist/tracks/button/button.js";
-import {addTrack} from "../../../data/data.js";
+import {addTrack} from "../../../js/data/data.js";
 import {Main} from "../main/Main.js";
 import {Container} from "../Container.js";
 

@@ -1,4 +1,4 @@
-import {renderTracks} from "../components/player/playlist/tracks/renderTracks.js";
+import {renderTracks} from "../../components/player/playlist/tracks/renderTracks.js";
 
 
 export const data = {
@@ -40,7 +40,7 @@ export const data = {
                     artistName: 'Viktor Coj',
                     trackTitle: 'Zvezda Po Imeni Solnce',
                     trackFileUrl: 'audio/Viktor Coj - Zvezda Po Imeni Solnce.mp3',
-                    isHot: true,
+                    isHot: false,
                     trackCoverImgUrl: 'img/cardImage/trackList/kino.jpg'
                 }
             ]
@@ -58,7 +58,7 @@ export const data = {
                     artistName: 'Bob Dylan',
                     trackTitle: 'Knockin On Heavens Door',
                     trackFileUrl: 'audio/Bob Dylan - Knockin On Heaven s Door.mp3',
-                    isHot: true,
+                    isHot: false,
                     trackCoverImgUrl: 'img/cardImage/trackList/bob-dilan.jpg'
                 },
                 {

@@ -1,4 +1,4 @@
-import {createElement} from "../../../data/data.js";
+import {createElement} from "../../../js/data/data.js";
 
 export function AddPlaylistPanel() {
     const addPlaylistPanel = createElement('div', 'add-playlist-panel')

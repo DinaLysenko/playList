@@ -1,4 +1,4 @@
-import {createElement} from "../../../data/data.js";
+import {createElement} from "../../../js/data/data.js";
 import {PlaylistInfo} from "../playlist/PlaylistInfo.js";
 import {Tracklist} from "../playlist/Tracklist.js";
 
