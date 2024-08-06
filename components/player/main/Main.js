@@ -1,11 +1,12 @@
-import {createElement, data} from "../../../js/data/data.js";
+import {createElement, dataCopy} from "../../../js/data/data.js";
 import {AddPlaylistPanel} from "./AddPlaylistPanel.js";
 import {Playlists} from "../playlists/Playlists.js";
 
-export function Main(data) {
+
+export function Main() {
     let container = createElement('main')
 
-    container.append(AddPlaylistPanel(), Playlists(data.playlists))
+    container.append(AddPlaylistPanel(), Playlists(dataCopy))
     return container
 }
 

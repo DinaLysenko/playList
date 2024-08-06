@@ -1,16 +1,16 @@
-import {data} from "./js/data/data.js";
+import {setTrack} from "./js/data/data.js";
 import {render} from "./js/render/render.js";
 
 
 
 // render
-render(data)
+render()
 
 
 
 
 // renderPlaylists(data)
-// setTrack(renderPlaylists)
+ setTrack(render)
 
 
 

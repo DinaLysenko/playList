@@ -1,7 +1,8 @@
 import {App} from "../../components/App.js";
 
-export function render(data){
-    let root=document.getElementById('root')
+const root = document.getElementById('root')
 
-    root.append(App(data))
+export function render() {
+    root.innerHTML = ''
+    root.append(App())
 }

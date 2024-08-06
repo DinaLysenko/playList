@@ -1,6 +1,3 @@
-import {renderTracks} from "../../components/player/playlist/tracks/renderTracks.js";
-
-
 export const data = {
     playlists: [
         {
@@ -89,28 +86,21 @@ export const data = {
         }
     ]
 }
+export let dataCopy = []
 
-
-function onChangeCallback() {
+export function onChangeCallback() {
 }
 
-export let tracksIndex = [{id: 0, currentTrackIndex: 0}, {id: 1, currentTrackIndex: 0}]
+export function addPlaylist() {
+    dataCopy.push({playListInfo: data.playlists[dataCopy.length].playListInfo, tracks: []})
 
-export function addTrack(playlistId) {
-    let tagElement = document.getElementById(playlists[playlistId].playListCategory)
-    let trackIndex = tracksIndex.find(el => el.id === playlistId)
-    if (trackIndex.currentTrackIndex <= playlists[playlistId].tracks.length) {
-        let currentTrack = playlistTracks.find(el => el.id === playlistId).tracks[trackIndex.currentTrackIndex]
-        playlists[playlistId].tracks.push(currentTrack)
+    onChangeCallback()
+}
 
-        renderTracks(playlists[playlistId].tracks[trackIndex.currentTrackIndex], tagElement);
-        trackIndex.currentTrackIndex++;
-        if (playlists[playlistId].tracks.length === playlistTracks[playlistId].tracks.length) {
-            let buttonElement = document.getElementById(playlistId.toString());
-            buttonElement.disabled = true;
-        }
-    }
+export function addTrack(id) {
+    dataCopy[id].tracks.push(data.playlists[id].tracks[dataCopy[id].tracks.length])
 
+    onChangeCallback()
 }
 
 
@@ -125,7 +115,7 @@ export function createElement(element, obj) {
         container.classList.add(obj)
     } else if (typeof obj === 'object') {
         for (const objKey in obj) {
-            if(objKey==='class'){
+            if (objKey === 'class') {
                 container.classList.add(obj[objKey])
             }
             container[objKey] = obj[objKey]
@@ -133,5 +123,6 @@ export function createElement(element, obj) {
     }
     return container
 }
+
 
 
