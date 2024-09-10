@@ -1,5 +1,6 @@
-import {createElement, data} from "../../../js/data/data.js";
-import {EditDeleteButton} from "../../common/EditDeleteButton.js";
+import {createElement, deletePlaylist, editPlaylistTitle,} from "../../../js/data/data.js";
+import {EditButton} from "../../common/EditButton.js";
+import {DeleteButton} from "../../common/DeleteButton.js";
 
 export function PlaylistInfo(playlist){
     const playlistInfo = createElement('div', 'playlist-info')
@@ -10,6 +11,8 @@ export function PlaylistInfo(playlist){
     const tracksCount=createElement('div', {class: 'tracks-count', innerText: `${playlist.tracksCount} tracks`})
 
     wrapper.append(title, tracksCount)
-    playlistInfo.append(playlistCoverImage, wrapper, EditDeleteButton())
+    const buttonsContainer = createElement('div', 'buttons-container')
+    buttonsContainer.append(EditButton(playlist.id, editPlaylistTitle), DeleteButton(playlist.id, deletePlaylist))
+    playlistInfo.append(playlistCoverImage, wrapper, buttonsContainer)
     return playlistInfo
 }

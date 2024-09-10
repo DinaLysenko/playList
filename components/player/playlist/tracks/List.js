@@ -1,5 +1,6 @@
-import {createElement} from "../../../../js/data/data.js";
-import {EditDeleteButton} from "../../../common/EditDeleteButton.js";
+import {createElement, deletePlaylist,editPlaylistTitle} from "../../../../js/data/data.js";
+import { EditButton} from "../../../common/EditButton.js";
+import {DeleteButton} from "../../../common/DeleteButton.js";
 
 export function List(tracks) {
     const list = createElement('ul', 'list')
@@ -22,11 +23,12 @@ export function List(tracks) {
             class: 'track-name',
             innerText: tracks[i].artistName + ' - ' + tracks[i].trackTitle
         })
-
+        const buttonsContainer = createElement('div', 'buttons-container')
+        buttonsContainer.append(EditButton(tracks.id, editPlaylistTitle), DeleteButton(tracks.id, deletePlaylist))
 
 
         const audio = createElement('audio', {controls: true, src: tracks[i].trackFileUrl})
-        trackInfo.append(trackName, EditDeleteButton())
+        trackInfo.append(trackName, buttonsContainer)
         trackTopLine.append(trackInfo)
         trackDetails.append(trackTopLine, audio)
         track.append(trackImg, trackDetails)

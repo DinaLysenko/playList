@@ -1,12 +1,12 @@
 import {createElement} from "../../../js/data/data.js";
 import {Article} from "./Article.js";
 
-export function Playlists(playlist){
+export function Playlists(data){
     const playlists = createElement('div', 'playlists')
 
-    for (let i = 0; i <playlist.length; i++) {
+    for (let i = 0; i < data.length; i++) {
 
-        const article=Article(playlist[i])
+        const article = Article(data[i])
         playlists.append(article)
     }
 

@@ -1,4 +1,4 @@
-import {addPlaylist, createElement, data, dataCopy} from "../../../js/data/data.js";
+import {addPlaylist, createElement, data, playlists} from "../../../js/data/data.js";
 
 
 
@@ -9,7 +9,7 @@ export function AddPlaylistPanel() {
 
     const button=createElement('button', {class: 'button', innerText: 'Add Playlist'})
     addPlaylistPanel.append(title, button)
-    if(data.playlists.length===dataCopy.length){
+    if(data.playlists.length===playlists.length){
         button.disabled=true
         button.classList.add('disabled')
     }
